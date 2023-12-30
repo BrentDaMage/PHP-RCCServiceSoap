@@ -22,7 +22,7 @@ class RCCServiceSoap {
 	function __construct($url = "127.0.0.1", $port = 64989) {
 		$this->ip = $url;
 		$this->port = $port;
-		$this->url = $url.$port;
+		$this->url = $url.":".$port;
 		$this->SoapClient = new \SoapClient(__DIR__."\RCCService.wsdl", ["location" => "http://".$url.":".$port, "uri" => "http://roblox.com/", "classmap" => $this->classmap, "exceptions" => false]);
 	}
 
